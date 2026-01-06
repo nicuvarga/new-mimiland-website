@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Rink - New Mimiland Website</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        function getCurrentSeason() {
+            const now = new Date();
+            const month = now.getMonth();
+            if (month >= 0 && month <= 2) return 'winter';
+            if (month >= 3 && month <= 5) return 'spring';
+            if (month >= 6 && month <= 8) return 'summer';
+            return 'autumn';
+        }
+        const season = localStorage.getItem('current_season') || getCurrentSeason();
+        if (season !== 'winter') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rides.html">Rides Catalog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="ice-rink.html">Ice Rink</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Ice Rink at New Mimiland</h1>
+            <p>Welcome to New Mimiland's magical Ice Rink! Glide across the frozen wonderland under twinkling lights and
+                festive decorations. Our rink features:</p>
+            <ul>
+                <li>Skate rentals available</li>
+                <li>Lessons for all skill levels</li>
+                <li>Hot cocoa station</li>
+                <li>Winter music and ambiance</li>
+            </ul>
+            <a href="https://patinoar.newmimiland.ro/rezervare" class="btn">Book Now</a>
+            <p>Hours: Open daily during winter season from 10 AM to 8 PM.</p>
+            <div id="editable-content">
+                <!-- Editable content will be loaded here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 New Mimiland Website. All rights reserved.</p>
+    </footer>
+    <script src="js/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const editableContent = document.getElementById('editable-content');
+            const content = localStorage.getItem('content_ice-rink');
+            if (content) {
+                editableContent.innerHTML = content;
+            }
+        });
+    </script>
+</body>
+
+</html>

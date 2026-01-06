@@ -1,0 +1,60 @@
+/* Spring Theme: Greens and Pastels */
+
+body {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+    filter: saturate(1.2) contrast(1.1);
+}
+
+header {
+    background-color: #81c784;
+}
+
+nav a {
+    color: #2e7d32;
+}
+
+nav a:hover {
+    background-color: #66bb6a;
+    box-shadow: 0 0 10px rgba(102, 187, 106, 0.5);
+}
+
+main {
+    background-color: #e8f5e8;
+}
+
+footer {
+    background-color: #81c784;
+    color: #1b5e20;
+}
+
+/* Blossoms */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(var(--rotation));
+    }
+
+    25% {
+        transform: translateY(75vh) rotate(calc(var(--rotation) + 10deg));
+    }
+
+    50% {
+        transform: translateY(50vh) rotate(calc(var(--rotation) - 10deg));
+    }
+
+    75% {
+        transform: translateY(25vh) rotate(calc(var(--rotation) + 10deg));
+    }
+
+    100% {
+        transform: translateY(-10px) translateX(var(--drift)) rotate(var(--rotation));
+    }
+}
+
+.blossom {
+    width: 12px;
+    height: 18px;
+    background: #e91e63;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: float 12s linear infinite;
+}

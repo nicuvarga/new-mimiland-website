@@ -1,0 +1,48 @@
+/* Winter Theme: Blues and Whites */
+
+body {
+    background-color: #bbdefb;
+    color: #0d47a1;
+    filter: saturate(1.2) contrast(1.1);
+}
+
+header {
+    background-color: #b0bec5;
+}
+
+nav a {
+    color: #1565c0;
+}
+
+nav a:hover {
+    background-color: #2196f3;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+}
+
+main {
+    background-color: #ffffff;
+}
+
+footer {
+    background-color: #b0bec5;
+    color: #0d47a1;
+}
+
+/* Snowflakes */
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) translateX(0px) rotate(var(--rotation));
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(var(--drift)) rotate(var(--rotation));
+    }
+}
+
+.snowflake {
+    width: 10px;
+    height: 10px;
+    background: white;
+    clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+    animation: fall 8s linear infinite;
+}

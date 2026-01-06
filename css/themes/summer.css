@@ -1,0 +1,70 @@
+/* Summer Theme: Bright and Warm */
+
+body {
+    background-color: #fff8e1;
+    color: #d84315;
+    filter: saturate(1.2) contrast(1.1);
+}
+
+header {
+    background-color: #ffd54f;
+}
+
+nav a {
+    color: #ff6f00;
+}
+
+nav a:hover {
+    background-color: #ffa726;
+    box-shadow: 0 0 10px rgba(255, 167, 38, 0.5);
+}
+
+main {
+    background-color: #e3f2fd;
+}
+
+footer {
+    background-color: #ffd54f;
+    color: #d84315;
+}
+
+/* Sparkles */
+@keyframes burst {
+    0% {
+        transform: scale(0) rotate(var(--rotation)) translateX(0px);
+        opacity: 1;
+    }
+
+    20% {
+        transform: scale(0.4) rotate(calc(var(--rotation) + 72deg)) translateX(var(--drift)/5);
+        opacity: 0.95;
+    }
+
+    40% {
+        transform: scale(1) rotate(calc(var(--rotation) + 144deg)) translateX(2*var(--drift)/5);
+        opacity: 0.8;
+    }
+
+    60% {
+        transform: scale(1.6) rotate(calc(var(--rotation) + 216deg)) translateX(3*var(--drift)/5);
+        opacity: 0.6;
+    }
+
+    80% {
+        transform: scale(1.9) rotate(calc(var(--rotation) + 288deg)) translateX(4*var(--drift)/5);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(2.2) rotate(calc(var(--rotation) + 360deg)) translateX(var(--drift));
+        opacity: 0;
+    }
+}
+
+.sparkle {
+    width: 10px;
+    height: 10px;
+    background: #ffd54f;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: burst 3s linear infinite;
+}

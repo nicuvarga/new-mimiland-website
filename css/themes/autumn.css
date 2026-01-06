@@ -1,0 +1,60 @@
+/* Autumn Theme: Oranges and Browns */
+
+body {
+    background-color: #d7ccc8;
+    color: #3e2723;
+    filter: saturate(1.2) contrast(1.1);
+}
+
+header {
+    background-color: #ff5722;
+}
+
+nav a {
+    color: #d84315;
+}
+
+nav a:hover {
+    background-color: #ff7043;
+    box-shadow: 0 0 10px rgba(255, 112, 67, 0.5);
+}
+
+main {
+    background-color: #efebe9;
+}
+
+footer {
+    background-color: #ff5722;
+    color: #3e2723;
+}
+
+/* Leaves */
+@keyframes drift {
+    0% {
+        transform: translateY(-10px) translateX(0px) rotate(var(--rotation));
+    }
+
+    25% {
+        transform: translateY(25vh) translateX(-7.5px) rotate(calc(var(--rotation) + 10deg));
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(-15px) rotate(calc(var(--rotation) - 10deg));
+    }
+
+    75% {
+        transform: translateY(75vh) translateX(-22.5px) rotate(calc(var(--rotation) + 10deg));
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(var(--drift)) rotate(var(--rotation));
+    }
+}
+
+.leaf {
+    width: 15px;
+    height: 25px;
+    background: #ff5722;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    animation: drift 10s linear infinite;
+}
